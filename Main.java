@@ -1,12 +1,55 @@
-import java.util.*;
+
+class Stack{
+    int a[]=new int[5];
+
+    int top=-1;
+
+    //push
+    public void push(int data){
+        if(top==a.length-1){
+            System.out.println("Stack is overflow");
+        }
+        else{
+            top++;
+            a[top]=data;
+        }
+
+    }
+    //pop
+    public void pop(){
+        if(top==-1){
+            System.out.println("Stack is underflow");
+        }
+        else{
+            top--;
+        }
+    }
+    //peak
+    public void peak(){
+        if(top==-1){
+            System.out.println("stack is empty");
+        }
+        else{
+            System.out.println("top of the element:"+a[top]);
+        }
+
+    }
+    //display
+    public void display(){
+        for(int i=top;i>=0;i--){
+            System.out.println("Display the element:"+a[i]);
+        }
+    }
+}
 public class Main {
     public static void main(String[] args) {
-
-        for (int i = 1; i <= 10; i++) {
-
-            if (i % 2 == 0) {
-                System.out.println(i);
-            }
-        }
+        Stack s=new Stack();
+        s.push(20);
+        s.push(30);
+        s.push(40);
+        s.push(50);
+        s.pop();
+        s.peak();
+        s.display();
     }
 }
